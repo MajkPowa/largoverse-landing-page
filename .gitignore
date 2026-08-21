@@ -1,0 +1,21 @@
+node_modules
+dist
+deploy
+
+# Interní podklady od klienta — Figma odkazy, mapa obrazovek, stažené assety.
+# Nesmí opustit tenhle počítač, viz README „Co se needituje ven".
+docs/
+
+.env
+.env.*
+!.env.example
+*.log
+tsconfig.tsbuildinfo
+.claude/settings.local.json
+.DS_Store
+Thumbs.db
+.deploy-passphrase.txt
+
+# Seznam pozvaných investorů — osobní údaje, nepatří do repozitáře.
+access-emails.txt
+.wrangler/

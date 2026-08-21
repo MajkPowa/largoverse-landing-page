@@ -1,0 +1,541 @@
+/* ---------- status bar ---------- */
+
+.statusbar {
+  height: var(--safe-top);
+  padding: 20px 30px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  flex: none;
+  position: relative;
+  z-index: 40;
+}
+
+.statusbar--dark {
+  color: #fff;
+}
+
+.statusbar__icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ---------- top bar ---------- */
+
+.topbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+  padding: var(--gap-2) var(--gap-5) var(--gap-3);
+  min-height: 48px;
+}
+
+.topbar__title {
+  font-size: var(--fs-title);
+  font-weight: 500;
+}
+
+.topbar--center .topbar__title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+.topbar__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- tlačítka ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-2);
+  min-height: 54px;
+  padding: 0 var(--gap-5);
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  transition: background 0.15s ease, opacity 0.15s ease, transform 0.08s ease;
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.985);
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+.btn--primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn--secondary {
+  background: var(--surface-muted);
+  color: var(--text);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--primary);
+  min-height: 44px;
+}
+
+.btn--social {
+  background: var(--surface-muted);
+  color: var(--text);
+  justify-content: flex-start;
+  font-weight: 500;
+  gap: var(--gap-4);
+  padding-left: var(--gap-5);
+}
+
+.btn[disabled] {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.btn-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--gap-3);
+}
+
+/* ---------- pole ---------- */
+
+.field {
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: 12px var(--gap-4);
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.field--muted {
+  background: var(--surface-muted);
+}
+
+.field--icon {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap-3);
+}
+
+.field__label {
+  font-size: var(--fs-tiny);
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
+.field__icon {
+  color: var(--text);
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.field-group {
+  background: var(--surface-muted);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.field-group .field {
+  background: transparent;
+  border-radius: 0;
+}
+
+.field-group .field + .field {
+  border-top: 1px solid rgba(11, 32, 39, 0.08);
+}
+
+/* ---------- karty a řádky ---------- */
+
+.card {
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: var(--gap-4);
+}
+
+.tile {
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: 14px var(--gap-4);
+  flex: 1;
+  min-width: 0;
+}
+
+.tile__label {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+
+.tile__value {
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.listrow {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+  padding: 10px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.listrow__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-pill);
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.listrow__icon--square {
+  border-radius: var(--r-sm);
+}
+
+.listrow__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.listrow__title {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listrow__sub {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+
+.listrow__right {
+  text-align: right;
+  flex: none;
+}
+
+.listrow__amount {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.menu-list {
+  background: var(--surface-muted);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.menu-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+  width: 100%;
+  padding: 15px var(--gap-4);
+  text-align: left;
+}
+
+.menu-list__item + .menu-list__item {
+  border-top: 1px solid rgba(11, 32, 39, 0.07);
+}
+
+.menu-list__label {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-list__sub {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+
+/* ---------- volitelné položky (radio) ---------- */
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+  width: 100%;
+  background: var(--surface);
+  border-radius: var(--r-md);
+  padding: 15px var(--gap-4);
+  text-align: left;
+  min-height: 56px;
+}
+
+.option--muted {
+  background: var(--surface-muted);
+}
+
+.option--selected {
+  background: var(--primary-soft);
+}
+
+.option__label {
+  flex: 1;
+}
+
+.option__check {
+  color: var(--primary);
+}
+
+/* ---------- chipy ---------- */
+
+.chips {
+  display: flex;
+  gap: var(--gap-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: none;
+  padding: 8px 16px;
+  border-radius: var(--r-sm);
+  background: var(--surface-muted);
+  color: var(--text);
+  font-size: var(--fs-body);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.chip--active {
+  background: var(--primary);
+  color: var(--primary-ink);
+}
+
+/* ---------- spodní navigace ---------- */
+
+.bottomnav {
+  position: absolute;
+  left: var(--gap-5);
+  right: var(--gap-5);
+  bottom: 22px;
+  height: 62px;
+  border-radius: var(--r-lg);
+  background: var(--nav);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: var(--shadow-nav);
+  z-index: 30;
+}
+
+.bottomnav__item {
+  color: var(--nav-ink-muted);
+  padding: 10px 14px;
+  display: grid;
+  place-items: center;
+  transition: color 0.15s ease;
+}
+
+.bottomnav__item--active {
+  color: var(--nav-ink);
+}
+
+/* ---------- bottom sheet ---------- */
+
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 32, 39, 0.35);
+  z-index: 50;
+  animation: fade 0.18s ease;
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 88%;
+  background: var(--bg);
+  /* Sheet se otevírá i z tmavých karet — barvu textu nesmí dědit po rodiči. */
+  color: var(--text);
+  border-radius: var(--r-sheet) var(--r-sheet) 0 0;
+  z-index: 51;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sheet);
+  animation: rise 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sheet--tall {
+  top: 130px;
+}
+
+.sheet__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-3);
+  padding: var(--gap-5) var(--gap-5) var(--gap-3);
+}
+
+.sheet__title {
+  font-size: var(--fs-title);
+  font-weight: 400;
+  flex: 1;
+  margin: 0;
+  padding-top: 22px;
+}
+
+.sheet__close {
+  color: var(--text);
+  padding: 4px;
+  margin-left: auto;
+}
+
+.sheet__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 var(--gap-5);
+  scrollbar-width: none;
+}
+
+.sheet__body::-webkit-scrollbar {
+  display: none;
+}
+
+.sheet__footer {
+  padding: var(--gap-4) var(--gap-5) var(--gap-6);
+  display: grid;
+  gap: var(--gap-2);
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(14%);
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---------- numerická klávesnice ---------- */
+
+.numpad {
+  background: #d1d5db;
+  padding: 6px 4px 26px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px 6px;
+  flex: none;
+}
+
+.numpad__key {
+  background: #fff;
+  border-radius: 6px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 400;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+  line-height: 1;
+}
+
+.numpad__key small {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.numpad__key--plain {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ---------- toast ---------- */
+
+.toast {
+  position: absolute;
+  left: var(--gap-5);
+  right: var(--gap-5);
+  bottom: 100px;
+  background: var(--nav);
+  color: #fff;
+  padding: 13px var(--gap-4);
+  border-radius: var(--r-md);
+  z-index: 70;
+  text-align: center;
+  font-size: var(--fs-small);
+  box-shadow: var(--shadow-nav);
+  animation: rise 0.22s ease;
+}
+
+/* ---------- značka / logo ---------- */
+
+.tree-mark {
+  background-color: var(--primary);
+  -webkit-mask-image: url('../assets/largo-tree.png');
+  mask-image: url('../assets/largo-tree.png');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+/* ---------- označení ukázky ---------- */
+
+/* Na desktopu nese sdělení popisek pod rámem telefonu (.stage__hint).
+   Na mobilu, kde je aplikace přes celou plochu, se zobrazí tenký proužek. */
+.demo-strip {
+  display: none;
+  flex: none;
+  background: var(--nav);
+  color: #ffffffcc;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  text-align: center;
+  padding: 3px 0;
+}
+
+@media (max-width: 720px) {
+  .demo-strip {
+    display: block;
+  }
+}

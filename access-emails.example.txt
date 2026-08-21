@@ -1,0 +1,7 @@
+# Kdo se dostane do ukázky. Jeden e-mail na řádek, # je komentář.
+# Zkopírujte na access-emails.txt a vyplňte. Ten soubor se needituje ven —
+# jsou v něm osobní údaje a je v .gitignore.
+#
+# Po každé úpravě spusťte:  npm run access:sync
+
+investor@example.com

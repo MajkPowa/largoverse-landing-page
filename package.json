@@ -1,0 +1,33 @@
+{
+  "name": "largoverse-landing-page",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/clean-dist.mjs && tsc -b && vite build",
+    "build:secure": "node scripts/build-secure.mjs",
+    "deploy:cf": "wrangler pages deploy deploy --project-name largoverse-demo --branch main --commit-dirty=true",
+    "access:sync": "node scripts/cloudflare-access.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.474.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.37.1",
+    "@cloudflare/workers-types": "^4.20260515.1",
+    "@openai/sites-vite-plugin": "^0.2.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^5.6.3",
+    "vite": "^8.0.14",
+    "wrangler": "^4.92.0"
+  }
+}
